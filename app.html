@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Interactivas</title>
+    <script defer src="./main.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        
+        .logo {
+            width: 100px; /* Tamaño más pequeño del logo */
+            display: block;
+            margin: 0 auto 30px auto; /* Centrado con menos espacio abajo */
+        }
+        
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        iframe {
+            width: 90%; /* Ajuste de ancho */
+            max-width: 800px; /* Máximo ancho */
+            height: 400px; /* Altura fija */
+            border: none;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+            display: block;
+            margin: auto;
+        }
+
+        .notebook {
+            background: url('https://www.transparenttextures.com/patterns/notebook.png');
+            padding: 20px;
+            width: 90%; /* Ajuste de ancho */
+            max-width: 800px; /* Máximo ancho */
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        textarea {
+            width: 95%;
+            height: 120px;
+            margin-top: 10px;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 18px;
+            background: transparent;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+        
+        button {
+            background: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        button:hover { background: #0056b3; }
+        #mensaje { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Logo más pequeño y centrado -->
+    <img src="https://i.postimg.cc/t417Yd5x/LOGO-LE2-1-NEGRO2025.png" alt="Logo" class="logo">
+    <text>Presione Lauch. o baje para guardar una nota</text>    
+
+    <!-- Contenedor del iframe centrado -->
+    <div class="iframe-container">
+        <iframe src="https://mywebar.com/p/Project_0_q8chcv6qh" allow="camera; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; microphone;"></iframe>
+    </div>
+    
+    <div class="notebook">
+        <h4>📖 Notas Interactivas</h4>    
+        <textarea id="notaTexto" placeholder="Escribe tus notas aquí..."></textarea>
+    </div>
+    <br>
+    <button onclick="guardarNota()">💾 Guardar Nota</button>
+
+    <p id="mensaje"></p>
+
+</body>
+</html>
