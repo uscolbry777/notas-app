@@ -11,7 +11,6 @@ async function guardarNota() {
     }
 
     try {
-        // Enviar la nota a JSONBin.io
         const response = await fetch(API_URL, {
             method: "POST",
             headers: {
@@ -23,14 +22,14 @@ async function guardarNota() {
         });
 
         const data = await response.json();
-        let enlace = `https://uscolbry777.github.io/notas-app/vernota.html?id=${data.metadata.id}`;
+       let enlace = `https://uscolbry777.github.io/vernota.html?id=${data.metadata.id}`;
 
-        // Mostrar mensaje en pantalla
+
         document.getElementById("mensaje").innerHTML = `
             ✅ <strong>Guardado exitoso</strong> 🎉<br>
-            📌 <strong>Tu nota está disponible en:</strong> <br>
+            📌 <strong>Tu nota está en:</strong> <br>
             <a href="${enlace}" target="_blank">${enlace}</a><br>
-            ⭐ <strong>Guarda este enlace en favoritos</strong> para acceder más tarde.
+            ⭐ <strong>Guarda este enlace en favoritos</strong>.
         `;
 
         console.log("📌 Nota guardada con ID:", data.metadata.id);
@@ -40,6 +39,4 @@ async function guardarNota() {
     }
 }
 
-// Hacer la función accesible desde el HTML
 window.guardarNota = guardarNota;
-
