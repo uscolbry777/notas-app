@@ -1,9 +1,8 @@
 const API_URL = "https://api.jsonbin.io/v3/b/";
-const MASTER_KEY = "$2a$10$Y3NKboje6Op54dQnjKdQvu0f08ZABCeJeO4WVk1RNEJyQsfGwot7."; // Reemplaza con tu X-Master-Key
-const ACCESS_KEY = "$2a$10$j9GP4KOPTkoSmpw3k9YXeOvB6vP/nOmXlbUEr6DVJQUheqZziDBEu"; // Reemplaza con tu X-Access-Key
+const MASTER_KEY = "$2a$10$Y3NKboje6Op54dQnjKdQvu0f08ZABCeJeO4WVk1RNEJyQsfGwot7."; 
+const ACCESS_KEY = "$2a$10$j9GP4KOPTkoSmpw3k9YXeOvB6vP/nOmXlbUEr6DVJQUheqZziDBEu";
 
 async function cargarNota() {
-    // Obtener el ID de la URL
     const params = new URLSearchParams(window.location.search);
     const notaID = params.get("id");
 
@@ -13,7 +12,6 @@ async function cargarNota() {
     }
 
     try {
-        // Obtener la nota de JSONBin.io
         const response = await fetch(API_URL + notaID, {
             method: "GET",
             headers: {
@@ -30,6 +28,4 @@ async function cargarNota() {
     }
 }
 
-// Ejecutar la función al cargar la página
 window.onload = cargarNota;
-
