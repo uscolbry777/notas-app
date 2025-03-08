@@ -22,7 +22,7 @@ async function guardarNota() {
         });
 
         const data = await response.json();
-       let enlace = `https://uscolbry777.github.io/vernota.html?id=${data.metadata.id}`;
+       let enlace = `https://uscolbry777.github.io/notas-app/vernota.html?id=${data.metadata.id}`;
 
 
         document.getElementById("mensaje").innerHTML = `
